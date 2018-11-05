@@ -15,6 +15,7 @@ import {
 import Student from './Student'
 import BaiStudent from './BaiStudent'
 import FlexDemo from './FlexDemo'
+import TouchableTest from './TouchableTest'
 
 export default class MyApp extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ export default class MyApp extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <TouchableTest/>
         <Text
           style={styles.welcome}
         >{this.stu.getDescription()}</Text>
