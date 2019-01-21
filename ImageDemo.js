@@ -9,10 +9,11 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
 } from 'react-native';
 
-import ImageDemo from './ImageDemo'
+import FlexDemo from './FlexDemo'
 
 export default class MyApp extends Component {
   constructor(props) {
@@ -24,7 +25,12 @@ export default class MyApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-       <ImageDemo/>
+       <Image 
+        stylel={styles.image} 
+        // 如果是require()引用的JS项目目录下的img文件，不需要设置图片大小，设置了也没有用。
+        // rn可以动态获取图片资源以及其大小，自动赋值
+        source={require('./assests/images/list.png')
+      }/>
       </View>
     );
   }
@@ -37,16 +43,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  image: {
+    width: 20,
+    height: 20,
+  }
 });
 
 AppRegistry.registerComponent('MyApp', () => MyApp);

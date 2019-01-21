@@ -12,19 +12,31 @@ import {
   View
 } from 'react-native';
 
-import ImageDemo from './ImageDemo'
+import Student from './Student'
+import BaiStudent from './BaiStudent'
+import FlexDemo from './FlexDemo'
+import TouchableTest from './TouchableTest'
 
 export default class MyApp extends Component {
   constructor(props) {
     super(props)
     this.state = {
     }
+    this.stu = new Student('baiyunfei429', 'man', 27)
+    this.bai = new BaiStudent()
   }
   
   render() {
     return (
       <View style={styles.container}>
-       <ImageDemo/>
+        <TouchableTest/>
+        <Text
+          style={styles.welcome}
+        >{this.stu.getDescription()}</Text>
+        <Text
+          style={styles.welcome}
+        >{this.bai.getDescription()}</Text>
+        <FlexDemo/>
       </View>
     );
   }
